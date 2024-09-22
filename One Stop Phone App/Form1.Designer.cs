@@ -34,6 +34,7 @@
             this.pconditionComboBox = new System.Windows.Forms.ComboBox();
             this.transactionalListBox = new System.Windows.Forms.ListBox();
             this.confirmationButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tradeinLabel
@@ -59,6 +60,7 @@
             this.phoneComboBox.Name = "phoneComboBox";
             this.phoneComboBox.Size = new System.Drawing.Size(121, 21);
             this.phoneComboBox.TabIndex = 1;
+            this.phoneComboBox.SelectedIndexChanged += new System.EventHandler(this.phoneComboBox_SelectedIndexChanged);
             // 
             // worthLabel
             // 
@@ -81,6 +83,7 @@
             this.pconditionComboBox.Name = "pconditionComboBox";
             this.pconditionComboBox.Size = new System.Drawing.Size(121, 21);
             this.pconditionComboBox.TabIndex = 3;
+            this.pconditionComboBox.SelectedIndexChanged += new System.EventHandler(this.pconditionComboBox_SelectedIndexChanged);
             // 
             // transactionalListBox
             // 
@@ -99,12 +102,24 @@
             this.confirmationButton.TabIndex = 5;
             this.confirmationButton.Text = "Confirm";
             this.confirmationButton.UseVisualStyleBackColor = true;
+            this.confirmationButton.Click += new System.EventHandler(this.confirmationButton_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(330, 273);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 6;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // OneStopPhoneApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.confirmationButton);
             this.Controls.Add(this.transactionalListBox);
             this.Controls.Add(this.pconditionComboBox);
@@ -113,6 +128,7 @@
             this.Controls.Add(this.tradeinLabel);
             this.Name = "OneStopPhoneApp";
             this.Text = "One Stop Phone App";
+            this.Load += new System.EventHandler(this.OneStopPhoneApp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +142,7 @@
         private System.Windows.Forms.ComboBox pconditionComboBox;
         private System.Windows.Forms.ListBox transactionalListBox;
         private System.Windows.Forms.Button confirmationButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 
